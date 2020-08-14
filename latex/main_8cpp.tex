@@ -1,0 +1,131 @@
+\hypertarget{main_8cpp}{}\section{bob\+\_\+secuscan/main.cpp 파일 참조}
+\label{main_8cpp}\index{bob\+\_\+secuscan/main.\+cpp@{bob\+\_\+secuscan/main.\+cpp}}
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}rule.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}decrypt\+\_\+xccdf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml\+\_\+parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}engine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scoring.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdf\+\_\+report.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}html\+\_\+report.\+h\char`\"{}}\newline
+main.\+cpp에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8cpp_ae3121841e645911456fe29d422b320e9}{H\+T\+ML}~1
+\item 
+\#define \hyperlink{main_8cpp_a50a6a866f6648822f5f99cba121bbd35}{P\+DF}~2
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{main_8cpp_ae3121841e645911456fe29d422b320e9}\label{main_8cpp_ae3121841e645911456fe29d422b320e9}} 
+\index{main.\+cpp@{main.\+cpp}!H\+T\+ML@{H\+T\+ML}}
+\index{H\+T\+ML@{H\+T\+ML}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{H\+T\+ML}{HTML}}
+{\footnotesize\ttfamily \#define H\+T\+ML~1}
+
+
+
+main.\+cpp 파일의 12 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8cpp_a50a6a866f6648822f5f99cba121bbd35}\label{main_8cpp_a50a6a866f6648822f5f99cba121bbd35}} 
+\index{main.\+cpp@{main.\+cpp}!P\+DF@{P\+DF}}
+\index{P\+DF@{P\+DF}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{P\+DF}{PDF}}
+{\footnotesize\ttfamily \#define P\+DF~2}
+
+
+
+main.\+cpp 파일의 13 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+암호화된 xccdf 파일 읽기
+
+sha256 decryption
+
+parsing rules
+
+루트인지 권한 체크
+
+cvss scoring 
+
+main.\+cpp 파일의 14 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+14           \{
+16     FILE *file = fopen(\textcolor{stringliteral}{"xccdf\_sample.xml"} , \textcolor{stringliteral}{"rb"});
+17     \textcolor{keywordtype}{char} xml\_binary[200];
+18     \textcolor{keywordflow}{if} (file == NULL) \{ printf(\textcolor{stringliteral}{"파일을 읽기 모드로 열 수 없습니다.\(\backslash\)n"});
+19         \textcolor{keywordflow}{return} 0; 
+20     \}
+21     fread(xml\_binary , \textcolor{keyword}{sizeof}(xml\_binary) , 1 , file);
+22     fclose(file);
+24     \textcolor{keywordtype}{char}* decrypted\_xml=\hyperlink{decrypt__xccdf_8cpp_a27469e936e25331c21909fd0c2c8baea}{decrypt}(PRIVATE\_KEY, xml\_binary);
+26     vector<Rule> rule\_set;
+27     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<line; i++)\{
+28         \hyperlink{struct_rule}{Rule} temp=decrypted\_xml[i];
+29         rule\_set.push\_back(temp);
+30     \}
+31     \textcolor{keywordtype}{int} passfail[200];
+33     \textcolor{keywordflow}{if}(!\hyperlink{engine_8cpp_a9593c4e9695af7b9c8de6d4295ed41b2}{check\_authority}())\{
+34         printf(\textcolor{stringliteral}{"no authority!\(\backslash\)n"});
+35         exit(0);
+36     \}
+37     memcpy(passfail, \hyperlink{engine_8cpp_ad5b63e5aa719dc0a51ea42c29a5c921a}{exec\_engine}(rule\_set, passfail), \textcolor{keyword}{sizeof}(passfail));
+39     \hyperlink{scoring_8cpp_afc65323578d43d64369eeeb29a163376}{cvss\_score}(passfail);
+40     \hyperlink{display_8cpp_a97a370a188fd0a16b6577920ba34fd2c}{total\_check\_list}(rule\_set, passfail);
+41     \textcolor{keywordtype}{int} response;
+42     \textcolor{keywordflow}{while}(response=on\_click(Save\_button))\{
+43         \textcolor{keywordflow}{if}(on\_click(Result.fix))\{
+44             \hyperlink{engine_8cpp_a0f15a8265e6f3a4a16da1286c6659721}{fixation}(rule\_set[Result.index()]);
+45         \}
+46     \}
+47     \hyperlink{html__report_8cpp_a202d1a90bd705341eb39c7e744c86516}{create\_html}(rule\_set, passfail);
+48     \hyperlink{pdf__report_8cpp_a9a68b1bf8ea084181a40a5296be9d805}{create\_pdf}(rule\_set, passfail);
+49     \textcolor{keywordflow}{switch} (modify\_category(response))
+50     \{
+51     \textcolor{keywordflow}{case} \hyperlink{main_8cpp_ae3121841e645911456fe29d422b320e9}{HTML}:
+52         \hyperlink{display_8cpp_aff64faf8c49787c8dabbd7eb2c4c2fdd}{show\_final\_score\_status}(\hyperlink{main_8cpp_ae3121841e645911456fe29d422b320e9}{HTML});
+53         \textcolor{keywordflow}{break};
+54     \textcolor{keywordflow}{case} \hyperlink{main_8cpp_a50a6a866f6648822f5f99cba121bbd35}{PDF}:
+55         \hyperlink{display_8cpp_aff64faf8c49787c8dabbd7eb2c4c2fdd}{show\_final\_score\_status}(\hyperlink{main_8cpp_a50a6a866f6648822f5f99cba121bbd35}{PDF});
+56         \textcolor{keywordflow}{break};
+57     \textcolor{keywordflow}{default}:
+58         \textcolor{keywordflow}{break};
+59     \}
+60     \textcolor{keywordflow}{return} 0;
+61 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}

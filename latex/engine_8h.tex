@@ -1,0 +1,144 @@
+\hypertarget{engine_8h}{}\section{bob\+\_\+secuscan/engine.h 파일 참조}
+\label{engine_8h}\index{bob\+\_\+secuscan/engine.\+h@{bob\+\_\+secuscan/engine.\+h}}
+{\ttfamily \#include \char`\"{}rule.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+engine.\+h에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{engine_8h__incl}
+\end{center}
+\end{figure}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{engine_8h_ad5b63e5aa719dc0a51ea42c29a5c921a}{exec\+\_\+engine} (vector$<$ \hyperlink{struct_rule}{Rule} $>$ \&ruleset, int $\ast$pf)
+\item 
+int \hyperlink{engine_8h_aa6f727915aba330716bbe1bf16f898e2}{check\+\_\+regex} ()
+\item 
+int \hyperlink{engine_8h_a9593c4e9695af7b9c8de6d4295ed41b2}{check\+\_\+authority} ()
+\item 
+void \hyperlink{engine_8h_a0f15a8265e6f3a4a16da1286c6659721}{fixation} (\hyperlink{struct_rule}{Rule} rule)
+\end{DoxyCompactItemize}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{engine_8h_a9593c4e9695af7b9c8de6d4295ed41b2}\label{engine_8h_a9593c4e9695af7b9c8de6d4295ed41b2}} 
+\index{engine.\+h@{engine.\+h}!check\+\_\+authority@{check\+\_\+authority}}
+\index{check\+\_\+authority@{check\+\_\+authority}!engine.\+h@{engine.\+h}}
+\subsubsection{\texorpdfstring{check\+\_\+authority()}{check\_authority()}}
+{\footnotesize\ttfamily int check\+\_\+authority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+루트 권한 체크 루트 권한 체크 
+
+engine.\+cpp 파일의 21 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+21                      \{
+23 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{engine_8h_a9593c4e9695af7b9c8de6d4295ed41b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{engine_8h_aa6f727915aba330716bbe1bf16f898e2}\label{engine_8h_aa6f727915aba330716bbe1bf16f898e2}} 
+\index{engine.\+h@{engine.\+h}!check\+\_\+regex@{check\+\_\+regex}}
+\index{check\+\_\+regex@{check\+\_\+regex}!engine.\+h@{engine.\+h}}
+\subsubsection{\texorpdfstring{check\+\_\+regex()}{check\_regex()}}
+{\footnotesize\ttfamily int check\+\_\+regex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+정규표현식 여부 검사 정규표현식 여부 검사 
+
+engine.\+cpp 파일의 17 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+17                  \{
+19 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{engine_8h_aa6f727915aba330716bbe1bf16f898e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{engine_8h_ad5b63e5aa719dc0a51ea42c29a5c921a}\label{engine_8h_ad5b63e5aa719dc0a51ea42c29a5c921a}} 
+\index{engine.\+h@{engine.\+h}!exec\+\_\+engine@{exec\+\_\+engine}}
+\index{exec\+\_\+engine@{exec\+\_\+engine}!engine.\+h@{engine.\+h}}
+\subsubsection{\texorpdfstring{exec\+\_\+engine()}{exec\_engine()}}
+{\footnotesize\ttfamily int$\ast$ exec\+\_\+engine (\begin{DoxyParamCaption}\item[{vector$<$ \hyperlink{struct_rule}{Rule} $>$ \&}]{ruleset,  }\item[{int $\ast$}]{pf }\end{DoxyParamCaption})}
+
+검사 수행 엔진 정규식 검사 
+
+engine.\+cpp 파일의 3 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+3                                                 \{
+4     \textcolor{keywordtype}{int} passfail[200];
+5     vector<Rule>::iterator ptr;
+6     \textcolor{keywordflow}{for}(ptr=ruleset.begin(); ptr!=ruleset.end(); ptr++)\{
+7         \textcolor{keywordflow}{if}(\hyperlink{engine_8cpp_aa6f727915aba330716bbe1bf16f898e2}{check\_regex}())\{
+9         \}
+10         \textcolor{keywordflow}{else}\{
+11             system(ptr->test);
+12         \}
+13     \}
+14     \textcolor{keywordflow}{return} passfail;
+15 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{engine_8h_ad5b63e5aa719dc0a51ea42c29a5c921a_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{engine_8h_ad5b63e5aa719dc0a51ea42c29a5c921a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{engine_8h_a0f15a8265e6f3a4a16da1286c6659721}\label{engine_8h_a0f15a8265e6f3a4a16da1286c6659721}} 
+\index{engine.\+h@{engine.\+h}!fixation@{fixation}}
+\index{fixation@{fixation}!engine.\+h@{engine.\+h}}
+\subsubsection{\texorpdfstring{fixation()}{fixation()}}
+{\footnotesize\ttfamily void fixation (\begin{DoxyParamCaption}\item[{\hyperlink{struct_rule}{Rule}}]{rule }\end{DoxyParamCaption})}
+
+fix 수행 fix 수행 
+
+engine.\+cpp 파일의 25 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+25                         \{
+27 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{engine_8h_a0f15a8265e6f3a4a16da1286c6659721_icgraph}
+\end{center}
+\end{figure}

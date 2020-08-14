@@ -1,0 +1,52 @@
+\hypertarget{decrypt__xccdf_8h}{}\section{bob\+\_\+secuscan/decrypt\+\_\+xccdf.h 파일 참조}
+\label{decrypt__xccdf_8h}\index{bob\+\_\+secuscan/decrypt\+\_\+xccdf.\+h@{bob\+\_\+secuscan/decrypt\+\_\+xccdf.\+h}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+decrypt\+\_\+xccdf.\+h에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{decrypt__xccdf_8h__incl}
+\end{center}
+\end{figure}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{decrypt__xccdf_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{decrypt__xccdf_8h_a27469e936e25331c21909fd0c2c8baea}{decrypt} (int key, char $\ast$encrypted\+\_\+xml)
+\end{DoxyCompactItemize}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{decrypt__xccdf_8h_a27469e936e25331c21909fd0c2c8baea}\label{decrypt__xccdf_8h_a27469e936e25331c21909fd0c2c8baea}} 
+\index{decrypt\+\_\+xccdf.\+h@{decrypt\+\_\+xccdf.\+h}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!decrypt\+\_\+xccdf.\+h@{decrypt\+\_\+xccdf.\+h}}
+\subsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily char$\ast$ decrypt (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{char $\ast$}]{encrypted\+\_\+xml }\end{DoxyParamCaption})}
+
+sha256 복호화 
+
+decrypt\+\_\+xccdf.\+cpp 파일의 3 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+3                                            \{
+4     \textcolor{keywordtype}{char}* decrypted\_xml=(\textcolor{keywordtype}{char}*)malloc(\textcolor{keyword}{sizeof}(encrypted\_xml)/\textcolor{keyword}{sizeof}(char));
+5     \textcolor{keywordflow}{return} sha256(key, encrypted\_xml);
+6 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{decrypt__xccdf_8h_a27469e936e25331c21909fd0c2c8baea_icgraph}
+\end{center}
+\end{figure}
