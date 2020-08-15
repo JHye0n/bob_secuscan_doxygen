@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SecuScan: bob_secuscan/rule.h 소스 파일</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SecuScan
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'검색');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_c67d31f8c767ca48deaed49ab6b1cb32.html">bob_secuscan</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rule.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/da6/rule_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a>;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../df/d57/struct_rule.html">    6</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../df/d57/struct_rule.html">Rule</a> final{</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../df/d57/struct_rule.html#a0b8d9364680bd6b50577c8be0d14903b">    7</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d57/struct_rule.html#a0b8d9364680bd6b50577c8be0d14903b">definition</a>; </div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../df/d57/struct_rule.html#abbeb0189b257493fd9d06c8c7c85ba58">    8</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d57/struct_rule.html#abbeb0189b257493fd9d06c8c7c85ba58">test</a>; </div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../df/d57/struct_rule.html#a96fb9817712ad0b33d4e407be0257b5c">    9</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d57/struct_rule.html#a96fb9817712ad0b33d4e407be0257b5c">object</a>;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../df/d57/struct_rule.html#ad8a0f697b716c6f7607bda36887009ef">   10</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d57/struct_rule.html#ad8a0f697b716c6f7607bda36887009ef">state</a>;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../df/d57/struct_rule.html#aee3e02b0da6debc39e4e7806c6d36338">   11</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d57/struct_rule.html#aee3e02b0da6debc39e4e7806c6d36338">fixation</a>;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../df/d57/struct_rule.html#a89b0df02f058414f1174e4a8d1a42144">   12</a></span>&#160;    <a class="code" href="../../df/d57/struct_rule.html#a89b0df02f058414f1174e4a8d1a42144">Rule</a>(<span class="keywordtype">string</span> def, <span class="keywordtype">string</span> tst, <span class="keywordtype">string</span> obj, <span class="keywordtype">string</span> st, <span class="keywordtype">string</span> fix){definition=def; test=tst; <span class="keywordtype">object</span>=obj; state=st; fixation=fix;}</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div><div class="ttc" id="struct_rule_html_abbeb0189b257493fd9d06c8c7c85ba58"><div class="ttname"><a href="../../df/d57/struct_rule.html#abbeb0189b257493fd9d06c8c7c85ba58">Rule::test</a></div><div class="ttdeci">string test</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00008">rule.h:8</a></div></div>
+<div class="ttc" id="struct_rule_html_a89b0df02f058414f1174e4a8d1a42144"><div class="ttname"><a href="../../df/d57/struct_rule.html#a89b0df02f058414f1174e4a8d1a42144">Rule::Rule</a></div><div class="ttdeci">Rule(string def, string tst, string obj, string st, string fix)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00012">rule.h:12</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div></div>
+<div class="ttc" id="struct_rule_html_ad8a0f697b716c6f7607bda36887009ef"><div class="ttname"><a href="../../df/d57/struct_rule.html#ad8a0f697b716c6f7607bda36887009ef">Rule::state</a></div><div class="ttdeci">string state</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00010">rule.h:10</a></div></div>
+<div class="ttc" id="struct_rule_html"><div class="ttname"><a href="../../df/d57/struct_rule.html">Rule</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00006">rule.h:6</a></div></div>
+<div class="ttc" id="struct_rule_html_a96fb9817712ad0b33d4e407be0257b5c"><div class="ttname"><a href="../../df/d57/struct_rule.html#a96fb9817712ad0b33d4e407be0257b5c">Rule::object</a></div><div class="ttdeci">string object</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00009">rule.h:9</a></div></div>
+<div class="ttc" id="struct_rule_html_aee3e02b0da6debc39e4e7806c6d36338"><div class="ttname"><a href="../../df/d57/struct_rule.html#aee3e02b0da6debc39e4e7806c6d36338">Rule::fixation</a></div><div class="ttdeci">string fixation</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00011">rule.h:11</a></div></div>
+<div class="ttc" id="struct_rule_html_a0b8d9364680bd6b50577c8be0d14903b"><div class="ttname"><a href="../../df/d57/struct_rule.html#a0b8d9364680bd6b50577c8be0d14903b">Rule::definition</a></div><div class="ttdeci">string definition</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00007">rule.h:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+다음에 의해 생성됨 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

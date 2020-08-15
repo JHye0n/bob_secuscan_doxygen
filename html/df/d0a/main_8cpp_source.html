@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SecuScan: bob_secuscan/main.cpp 소스 파일</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SecuScan
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'검색');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_c67d31f8c767ca48deaed49ab6b1cb32.html">bob_secuscan</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/d0a/main_8cpp.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/da6/rule_8h.html">rule.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dce/decrypt__xccdf_8h.html">decrypt_xccdf.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d18/xml__parser_8h.html">xml_parser.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/d55/engine_8h.html">engine.h</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d5c/scoring_8h.html">scoring.h</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/d68/display_8h.html">display.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d29/pdf__report_8h.html">pdf_report.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/dd8/html__report_8h.html">html_report.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../df/d0a/main_8cpp.html#ae3121841e645911456fe29d422b320e9">   12</a></span>&#160;<span class="preprocessor">#define HTML 1</span></div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../df/d0a/main_8cpp.html#a50a6a866f6648822f5f99cba121bbd35">   13</a></span>&#160;<span class="preprocessor">#define PDF 2</span></div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   14</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    FILE *file = fopen(<span class="stringliteral">&quot;xccdf_sample.xml&quot;</span> , <span class="stringliteral">&quot;rb&quot;</span>);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">char</span> xml_binary[200];</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (file == NULL) { printf(<span class="stringliteral">&quot;파일을 읽기 모드로 열 수 없습니다.\n&quot;</span>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> 0; </div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    fread(xml_binary , <span class="keyword">sizeof</span>(xml_binary) , 1 , file);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    fclose(file);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">char</span>* decrypted_xml=<a class="code" href="../../d4/d51/decrypt__xccdf_8cpp.html#a27469e936e25331c21909fd0c2c8baea">decrypt</a>(PRIVATE_KEY, xml_binary);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    vector&lt;Rule&gt; rule_set;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;line; i++){</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="../../df/d57/struct_rule.html">Rule</a> temp=decrypted_xml[i];</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        rule_set.push_back(temp);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> passfail[200];</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../da/d5c/engine_8cpp.html#a9593c4e9695af7b9c8de6d4295ed41b2">check_authority</a>()){</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        printf(<span class="stringliteral">&quot;no authority!\n&quot;</span>);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        exit(0);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    memcpy(passfail, <a class="code" href="../../da/d5c/engine_8cpp.html#ad5b63e5aa719dc0a51ea42c29a5c921a">exec_engine</a>(rule_set, passfail), <span class="keyword">sizeof</span>(passfail));</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../d9/d9a/scoring_8cpp.html#afc65323578d43d64369eeeb29a163376">cvss_score</a>(passfail);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../db/d86/display_8cpp.html#a97a370a188fd0a16b6577920ba34fd2c">total_check_list</a>(rule_set, passfail);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> response;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">while</span>(response=on_click(Save_button)){</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span>(on_click(Result.fix)){</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="../../da/d5c/engine_8cpp.html#a0f15a8265e6f3a4a16da1286c6659721">fixation</a>(rule_set[Result.index()]);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d9/d35/html__report_8cpp.html#a202d1a90bd705341eb39c7e744c86516">create_html</a>(rule_set, passfail);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d4/d0e/pdf__report_8cpp.html#a9a68b1bf8ea084181a40a5296be9d805">create_pdf</a>(rule_set, passfail);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">switch</span> (modify_category(response))</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="../../df/d0a/main_8cpp.html#ae3121841e645911456fe29d422b320e9">HTML</a>:</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="../../db/d86/display_8cpp.html#aff64faf8c49787c8dabbd7eb2c4c2fdd">show_final_score_status</a>(<a class="code" href="../../df/d0a/main_8cpp.html#ae3121841e645911456fe29d422b320e9">HTML</a>);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="../../df/d0a/main_8cpp.html#a50a6a866f6648822f5f99cba121bbd35">PDF</a>:</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../db/d86/display_8cpp.html#aff64faf8c49787c8dabbd7eb2c4c2fdd">show_final_score_status</a>(<a class="code" href="../../df/d0a/main_8cpp.html#a50a6a866f6648822f5f99cba121bbd35">PDF</a>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">default</span>:</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div><div class="ttc" id="xml__parser_8h_html"><div class="ttname"><a href="../../dc/d18/xml__parser_8h.html">xml_parser.h</a></div></div>
+<div class="ttc" id="engine_8h_html"><div class="ttname"><a href="../../d1/d55/engine_8h.html">engine.h</a></div></div>
+<div class="ttc" id="rule_8h_html"><div class="ttname"><a href="../../dd/da6/rule_8h.html">rule.h</a></div></div>
+<div class="ttc" id="html__report_8cpp_html_a202d1a90bd705341eb39c7e744c86516"><div class="ttname"><a href="../../d9/d35/html__report_8cpp.html#a202d1a90bd705341eb39c7e744c86516">create_html</a></div><div class="ttdeci">void create_html(vector&lt; Rule &gt; &amp;ruleset, int *pf)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d35/html__report_8cpp_source.html#l00006">html_report.cpp:6</a></div></div>
+<div class="ttc" id="engine_8cpp_html_a9593c4e9695af7b9c8de6d4295ed41b2"><div class="ttname"><a href="../../da/d5c/engine_8cpp.html#a9593c4e9695af7b9c8de6d4295ed41b2">check_authority</a></div><div class="ttdeci">int check_authority()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d5c/engine_8cpp_source.html#l00025">engine.cpp:25</a></div></div>
+<div class="ttc" id="display_8cpp_html_a97a370a188fd0a16b6577920ba34fd2c"><div class="ttname"><a href="../../db/d86/display_8cpp.html#a97a370a188fd0a16b6577920ba34fd2c">total_check_list</a></div><div class="ttdeci">void total_check_list(vector&lt; Rule &gt; &amp;ruleset, int *pf)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d86/display_8cpp_source.html#l00011">display.cpp:11</a></div></div>
+<div class="ttc" id="scoring_8h_html"><div class="ttname"><a href="../../dc/d5c/scoring_8h.html">scoring.h</a></div></div>
+<div class="ttc" id="pdf__report_8h_html"><div class="ttname"><a href="../../dc/d29/pdf__report_8h.html">pdf_report.h</a></div></div>
+<div class="ttc" id="main_8cpp_html_ae3121841e645911456fe29d422b320e9"><div class="ttname"><a href="../../df/d0a/main_8cpp.html#ae3121841e645911456fe29d422b320e9">HTML</a></div><div class="ttdeci">#define HTML</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d0a/main_8cpp_source.html#l00012">main.cpp:12</a></div></div>
+<div class="ttc" id="display_8h_html"><div class="ttname"><a href="../../d4/d68/display_8h.html">display.h</a></div></div>
+<div class="ttc" id="main_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d0a/main_8cpp_source.html#l00014">main.cpp:14</a></div></div>
+<div class="ttc" id="pdf__report_8cpp_html_a9a68b1bf8ea084181a40a5296be9d805"><div class="ttname"><a href="../../d4/d0e/pdf__report_8cpp.html#a9a68b1bf8ea084181a40a5296be9d805">create_pdf</a></div><div class="ttdeci">void create_pdf(vector&lt; Rule &gt; &amp;ruleset, int *pf)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0e/pdf__report_8cpp_source.html#l00004">pdf_report.cpp:4</a></div></div>
+<div class="ttc" id="html__report_8h_html"><div class="ttname"><a href="../../d8/dd8/html__report_8h.html">html_report.h</a></div></div>
+<div class="ttc" id="engine_8cpp_html_a0f15a8265e6f3a4a16da1286c6659721"><div class="ttname"><a href="../../da/d5c/engine_8cpp.html#a0f15a8265e6f3a4a16da1286c6659721">fixation</a></div><div class="ttdeci">void fixation(Rule rule)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d5c/engine_8cpp_source.html#l00030">engine.cpp:30</a></div></div>
+<div class="ttc" id="decrypt__xccdf_8cpp_html_a27469e936e25331c21909fd0c2c8baea"><div class="ttname"><a href="../../d4/d51/decrypt__xccdf_8cpp.html#a27469e936e25331c21909fd0c2c8baea">decrypt</a></div><div class="ttdeci">char * decrypt(int key, char *encrypted_xml)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d51/decrypt__xccdf_8cpp_source.html#l00010">decrypt_xccdf.cpp:10</a></div></div>
+<div class="ttc" id="struct_rule_html"><div class="ttname"><a href="../../df/d57/struct_rule.html">Rule</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/da6/rule_8h_source.html#l00006">rule.h:6</a></div></div>
+<div class="ttc" id="engine_8cpp_html_ad5b63e5aa719dc0a51ea42c29a5c921a"><div class="ttname"><a href="../../da/d5c/engine_8cpp.html#ad5b63e5aa719dc0a51ea42c29a5c921a">exec_engine</a></div><div class="ttdeci">int * exec_engine(vector&lt; Rule &gt; &amp;ruleset, int *pf)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d5c/engine_8cpp_source.html#l00006">engine.cpp:6</a></div></div>
+<div class="ttc" id="decrypt__xccdf_8h_html"><div class="ttname"><a href="../../d0/dce/decrypt__xccdf_8h.html">decrypt_xccdf.h</a></div></div>
+<div class="ttc" id="main_8cpp_html_a50a6a866f6648822f5f99cba121bbd35"><div class="ttname"><a href="../../df/d0a/main_8cpp.html#a50a6a866f6648822f5f99cba121bbd35">PDF</a></div><div class="ttdeci">#define PDF</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d0a/main_8cpp_source.html#l00013">main.cpp:13</a></div></div>
+<div class="ttc" id="scoring_8cpp_html_afc65323578d43d64369eeeb29a163376"><div class="ttname"><a href="../../d9/d9a/scoring_8cpp.html#afc65323578d43d64369eeeb29a163376">cvss_score</a></div><div class="ttdeci">int cvss_score(int *passfail)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d9a/scoring_8cpp_source.html#l00004">scoring.cpp:4</a></div></div>
+<div class="ttc" id="display_8cpp_html_aff64faf8c49787c8dabbd7eb2c4c2fdd"><div class="ttname"><a href="../../db/d86/display_8cpp.html#aff64faf8c49787c8dabbd7eb2c4c2fdd">show_final_score_status</a></div><div class="ttdeci">void show_final_score_status(int category)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d86/display_8cpp_source.html#l00014">display.cpp:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+다음에 의해 생성됨 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

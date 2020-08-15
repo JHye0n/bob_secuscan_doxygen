@@ -10,8 +10,6 @@ var NAVTREEINDEX0 =
 "decrypt__xccdf_8h_source.html":[1,0,0,1],
 "dir_c67d31f8c767ca48deaed49ab6b1cb32.html":[1,0,0],
 "display_8cpp.html":[1,0,0,2],
-"display_8cpp.html#a97a370a188fd0a16b6577920ba34fd2c":[1,0,0,2,1],
-"display_8cpp.html#aff64faf8c49787c8dabbd7eb2c4c2fdd":[1,0,0,2,0],
 "display_8cpp_source.html":[1,0,0,2],
 "display_8h.html":[1,0,0,3],
 "display_8h.html#a97a370a188fd0a16b6577920ba34fd2c":[1,0,0,3,1],
