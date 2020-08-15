@@ -129,10 +129,12 @@ decrypt_xccdf.cpp에 대한 include 의존 그래프</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>sha256 복호화 </p>
+<p>SHA256 Decode Function</p>
+<p>decrypt(key, encrypted_xml)</p>
+<p>암호화 된 XML 파일을 복호화 하는 함수를 정의합니다. </p>
 
-<p class="definition"><a class="el" href="decrypt__xccdf_8cpp_source.html">decrypt_xccdf.cpp</a> 파일의 <a class="el" href="decrypt__xccdf_8cpp_source.html#l00003">3</a> 번째 라인에서 정의되었습니다.</p>
-<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                           {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordtype">char</span>* decrypted_xml=(<span class="keywordtype">char</span>*)malloc(<span class="keyword">sizeof</span>(encrypted_xml)/<span class="keyword">sizeof</span>(char));</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">return</span> sha256(key, encrypted_xml);</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+<p class="definition"><a class="el" href="decrypt__xccdf_8cpp_source.html">decrypt_xccdf.cpp</a> 파일의 <a class="el" href="decrypt__xccdf_8cpp_source.html#l00010">10</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                           {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">char</span>* decrypted_xml=(<span class="keywordtype">char</span>*)malloc(<span class="keyword">sizeof</span>(encrypted_xml)/<span class="keyword">sizeof</span>(char));</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> sha256(key, encrypted_xml);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
 이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
 <div class="dyncontent">
 <div class="center"><img src="decrypt__xccdf_8cpp_a27469e936e25331c21909fd0c2c8baea_icgraph.png" border="0" usemap="#decrypt__xccdf_8cpp_a27469e936e25331c21909fd0c2c8baea_icgraph" alt=""/></div>
